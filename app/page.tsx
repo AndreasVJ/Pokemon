@@ -40,7 +40,8 @@ export default function Home() {
             if (activeIndexRef.current > 0) {
                 application.setActiveIndex(index => index - 1)
             }
-        } else if (nextRowKeys.includes(event.key)) {
+        } 
+        else if (nextRowKeys.includes(event.key)) {
             if (activeIndexRef.current < pokemonsLengthRef.current - 1) {
                 application.setActiveIndex(index => index + 1)
             }
@@ -66,38 +67,46 @@ export default function Home() {
     return (
         <ApplicationContext.Provider value={application}>
             <div className={styles.homePageWrapper}>
-                <PokemonCard />
-                <div>
-                    <PersistentCheckbox 
-                        label="Picture" 
-                        storageKey="enablePicture" 
-                        state={enablePicture} 
-                        setState={setEnablePicture}
-                        initialState={true}
-                    />
-                    <PersistentCheckbox 
-                        label="Height" 
-                        storageKey="enableHeight" 
-                        state={enableHeight} 
-                        setState={setEnableHeight}
-                        initialState={true}
-                    />
-                    <PersistentCheckbox 
-                        label="Weight" 
-                        storageKey="enableWeight" 
-                        state={enableWeight} 
-                        setState={setEnableWeight}
-                        initialState={true}
-                    />
-                    <PersistentCheckbox 
-                        label="Types" 
-                        storageKey="enableTypes" 
-                        state={enableTypes} 
-                        setState={setEnableTypes}
-                        initialState={true}
-                    />
-                    <PokemonTable />
-                </div>
+                <header>PokéTable</header>
+
+                <main>
+                    <PokemonCard />
+                    <div>
+                        <PersistentCheckbox 
+                            label="Picture" 
+                            storageKey="enablePicture" 
+                            state={enablePicture} 
+                            setState={setEnablePicture}
+                            initialState={true}
+                        />
+                        <PersistentCheckbox 
+                            label="Height" 
+                            storageKey="enableHeight" 
+                            state={enableHeight} 
+                            setState={setEnableHeight}
+                            initialState={true}
+                        />
+                        <PersistentCheckbox 
+                            label="Weight" 
+                            storageKey="enableWeight" 
+                            state={enableWeight} 
+                            setState={setEnableWeight}
+                            initialState={true}
+                        />
+                        <PersistentCheckbox 
+                            label="Types" 
+                            storageKey="enableTypes" 
+                            state={enableTypes} 
+                            setState={setEnableTypes}
+                            initialState={true}
+                        />
+                        <PokemonTable />
+                    </div>
+                </main> 
+
+                <footer>
+                    <p>Pokémon data is fetched from <a href="https://pokeapi.co">https://pokeapi.co</a></p>
+                </footer>
             </div>
         </ApplicationContext.Provider>
     )

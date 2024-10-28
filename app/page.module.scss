@@ -1,7 +1,39 @@
-.homePageWrapper {
+.homePageWrapper { 
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    background: linear-gradient(to bottom, #f3f4f6, #d2d6da);
+
+    header {
+        text-align: center;
+        font-size: 4rem;
+        padding: 1rem;
+        background-color: #262626;
+        color: white;
+    }
+
+    main {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        > * {
+            margin: 4rem;
+        }
+    } 
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        height: 3rem;
+        background-color: #262626;
+        color: white;
+        
+        p {
+            margin-right: 1rem;
+        }
+    }
 }

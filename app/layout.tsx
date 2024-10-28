@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Pokemon",
-  description: "Pokemon",
+  title: "PokéTable",
+  description: "Pokémon table"
 };
 
 export default function RootLayout({

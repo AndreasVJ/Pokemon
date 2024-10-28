@@ -1,7 +1,9 @@
 .cardContainer {
-    width: 300px;
-    height: 500px;
-    background-color: red;
+    width: 40vh;
+    height: 60vh;
+    background-color: #E3350D;
+    border: solid 8px #FFCC01;
+    border-radius: 1rem;
 
     .cardHeader {
         display: flex;
@@ -9,10 +11,14 @@
     }
 
     .imgContainer {
+        width: 80%;
+        margin: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: gray;
+        border: solid 4px silver;
+        background-image: url("/images/background.jpg");
+        background-size: cover;
     }
 
     .moveRow {
