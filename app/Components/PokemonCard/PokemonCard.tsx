@@ -42,8 +42,8 @@ export default function PokemonCard() {
     return (
         <div className={styles.cardContainer}>
             <div className={styles.cardHeader}>
-                <p>{pokemon.name}</p>
-                <p>{pokemon.stats.find(stat => stat.stat.name === "hp")?.base_stat}</p>
+                <p className={styles.name}>{pokemon.name}</p>
+                <p className={styles.health}>{pokemon.stats.find(stat => stat.stat.name === "hp")?.base_stat}</p>
             </div>
             
             <div className={styles.imgContainer}>

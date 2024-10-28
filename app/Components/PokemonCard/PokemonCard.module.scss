@@ -8,10 +8,24 @@
     .cardHeader {
         display: flex;
         justify-content: space-between;
+
+        font-size: 2rem;
+
+        .name, .health {
+            margin: 0.5rem 1rem;
+            font-weight: 500;
+        }
+
+        .health::before {
+            content: "HP";
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 0.2rem;
+        }
     }
 
     .imgContainer {
-        width: 80%;
+        width: 90%;
         margin: auto;
         display: flex;
         align-items: center;
@@ -22,10 +36,13 @@
     }
 
     .moveRow {
+        margin: 0 1rem;
         
         .moveMain {
             display: flex;
             justify-content: space-between;
+            font-size: 1.5rem;
+            font-weight: 500;
 
             p {
                 margin-bottom: 0.25rem;
@@ -33,7 +50,6 @@
         }
 
         .moveDescription {
-            font-size: 0.8rem;
             margin-top: 0;
         }
     }
