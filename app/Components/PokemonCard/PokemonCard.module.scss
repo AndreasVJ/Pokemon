@@ -1,4 +1,34 @@
 .cardContainer {
     width: 300px;
-    height: 300px;
+    height: 500px;
+    background-color: red;
+
+    .cardHeader {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .imgContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: gray;
+    }
+
+    .moveRow {
+        
+        .moveMain {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        .moveDescription {
+            font-size: 0.8rem;
+            margin-top: 0;
+        }
+    }
 }
