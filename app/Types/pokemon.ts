@@ -1,3 +1,6 @@
+import type { Move } from "./move"
+
+
 export interface Pokemon {
     id: number
     name: string
@@ -26,10 +29,7 @@ export interface Pokemon {
         }
     }[]
     moves: {
-        move: {
-            name: string
-            url: string
-        }
+        move: Move
         version_group_details: {
             level_learned_at: number
         }[]
