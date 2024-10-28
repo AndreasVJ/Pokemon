@@ -12,8 +12,12 @@ export async function readPokemonPage(page: number) : Promise<Pokemon[]> {
 
     const pokemons = await Promise.all(
         data.results.map(async (pokemon: { url: string }) => {
-          const res = await fetch(pokemon.url)
-          return res.json()
+            const res = await fetch(pokemon.url)
+            const pokemonData = await res.json()
+            return {
+                ...pokemonData,
+                name: pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1) // Capitalize first letter
+            }
         })
     )
 
