@@ -2,8 +2,12 @@ import { Dispatch, SetStateAction } from "react";
 import type { Pokemon } from "../Types/pokemon";
 
 export interface Application {
-    pokemons: Pokemon[],
+    pokemons: Pokemon[]
     setPokemons: Dispatch<SetStateAction<Pokemon[]>>
-    activeIndex: number,
+    activeIndex: number
     setActiveIndex: Dispatch<SetStateAction<number>>
+    enablePicture: boolean
+    enableHeight: boolean
+    enableWeight: boolean
+    enableTypes: boolean
 }

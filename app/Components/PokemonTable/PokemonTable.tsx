@@ -15,7 +15,7 @@ export default function PokemonTable() {
     const [hasMore, setHasMore] = useState(true)
 
 
-    const fetchPokemons = async () => {
+    async function fetchPokemons() {
         if (loading) return // Prevent multiple requests at the same time 
         setLoading(true) 
     
@@ -80,10 +80,10 @@ export default function PokemonTable() {
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Picture</th>
-                        <th>Height</th>
-                        <th>Weight</th>
-                        <th>Types</th>
+                        <th className={application.enablePicture ? "" : styles.hide}>Picture</th>
+                        <th className={application.enableHeight ? "" : styles.hide}>Height</th>
+                        <th className={application.enableWeight ? "" : styles.hide}>Weight</th>
+                        <th className={application.enableTypes ? "" : styles.hide}>Types</th>
                     </tr>
                 </thead>
                 <tbody onClick={handleRowClick}>

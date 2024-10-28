@@ -5,11 +5,17 @@ import { ApplicationContext } from "./Context/ApplicationContext"
 import PokemonCard from "./Components/PokemonCard/PokemonCard"
 import PokemonTable from './Components/PokemonTable/PokemonTable'
 import type { Pokemon } from "./Types/pokemon"
+import PersistentCheckbox from "./Components/UI/PersistentCheckbox"
 
 
 export default function Home() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([])
     const [activeIndex, setActiveIndex] = useState<number>(-1)
+
+    const [enablePicture, setEnablePicture] = useState<boolean>(true)
+    const [enableHeight, setEnableHeight] = useState<boolean>(true)
+    const [enableWeight, setEnableWeight] = useState<boolean>(true)
+    const [enableTypes, setEnableTypes] = useState<boolean>(true)
 
     const activeIndexRef = useRef(activeIndex)
     const pokemonsLengthRef = useRef(pokemons.length)
@@ -18,7 +24,11 @@ export default function Home() {
         pokemons,
         setPokemons,
         activeIndex,
-        setActiveIndex
+        setActiveIndex,
+        enablePicture,
+        enableHeight,
+        enableWeight,
+        enableTypes
     }
 
     const handleWindowKeyDown = (event: KeyboardEvent) => {
@@ -57,7 +67,37 @@ export default function Home() {
         <ApplicationContext.Provider value={application}>
             <div className={styles.homePageWrapper}>
                 <PokemonCard />
-                <PokemonTable />
+                <div>
+                    <PersistentCheckbox 
+                        label="Picture" 
+                        storageKey="enablePicture" 
+                        state={enablePicture} 
+                        setState={setEnablePicture}
+                        initialState={true}
+                    />
+                    <PersistentCheckbox 
+                        label="Height" 
+                        storageKey="enableHeight" 
+                        state={enableHeight} 
+                        setState={setEnableHeight}
+                        initialState={true}
+                    />
+                    <PersistentCheckbox 
+                        label="Weight" 
+                        storageKey="enableWeight" 
+                        state={enableWeight} 
+                        setState={setEnableWeight}
+                        initialState={true}
+                    />
+                    <PersistentCheckbox 
+                        label="Types" 
+                        storageKey="enableTypes" 
+                        state={enableTypes} 
+                        setState={setEnableTypes}
+                        initialState={true}
+                    />
+                    <PokemonTable />
+                </div>
             </div>
         </ApplicationContext.Provider>
     )

@@ -30,16 +30,16 @@ function PokemonRow({ pokemon, index }: PokemonRowProps) {
         >
             <td>{pokemon.id}</td>
             <td>{pokemon.name}</td>
-            <td>
+            <td className={application.enablePicture ? "" : styles.hide}>
                 <img
                     src={pokemon.sprites.front_default}
                     alt={pokemon.name}
                     style={{ width: '50px', height: '50px' }}
                 />
             </td>
-            <td>{pokemon.height}</td>
-            <td>{pokemon.weight}</td>
-            <td>{pokemon.types.map(type => type.type.name).join(', ')}</td>
+            <td className={application.enableHeight ? "" : styles.hide}>{pokemon.height}</td>
+            <td className={application.enableWeight ? "" : styles.hide}>{pokemon.weight}</td>
+            <td className={application.enableTypes ? "" : styles.hide}>{pokemon.types.map(type => type.type.name).join(', ')}</td>
         </tr>       
     )
 }

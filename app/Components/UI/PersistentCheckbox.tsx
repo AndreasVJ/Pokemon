@@ -6,9 +6,10 @@ interface PersistentCheckboxProps {
     storageKey: string
     state: boolean
     setState: Dispatch<SetStateAction<boolean>>
+    initialState: boolean
 }
 
-export default function PersistentCheckbox({ label, storageKey, state, setState }: PersistentCheckboxProps) {
+export default function PersistentCheckbox({ label, storageKey, state, setState, initialState }: PersistentCheckboxProps) {
     function handleChange() {
         setState(prev => !prev)
     }
@@ -16,17 +17,15 @@ export default function PersistentCheckbox({ label, storageKey, state, setState 
     // Retrieve from localStorage on initial load
     // Important!!!
     // this function must be placed before the one writing to localStorage 
-    // to prevent localStorage to be overwritten on initial load
+    // to prevent localStorage from being overwritten on initial load
     useEffect(() => {
         const storedValue = localStorage.getItem(storageKey)
         
         // Check if value existed in localStorage
         if (storedValue === null) {
-            console.log("null")
-            setState(false)
+            setState(initialState)
         }
         else {
-            console.log(storedValue)
             setState(JSON.parse(storedValue))
         }
     }, [])
@@ -34,7 +33,6 @@ export default function PersistentCheckbox({ label, storageKey, state, setState 
     // Persist the state to localStorage whenever it changes
     useEffect(() => {
         localStorage.setItem(storageKey, JSON.stringify(state))
-        console.log(state)
     }, [state, storageKey]) 
 
     return (
