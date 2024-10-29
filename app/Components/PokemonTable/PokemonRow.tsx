@@ -1,5 +1,5 @@
 import styles from "./PokemonRow.module.scss" 
-import { memo, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useApplicationContext } from "@/app/Context/ApplicationContext"
 import type { Pokemon } from "@/app/Types/pokemon"
 
@@ -8,7 +8,7 @@ interface PokemonRowProps {
     index: number
 }
 
-function PokemonRow({ pokemon, index }: PokemonRowProps) {
+export default function PokemonRow({ pokemon, index }: PokemonRowProps) {
     const application = useApplicationContext()
     const rowRef = useRef<HTMLTableRowElement | null>(null)
 
@@ -44,9 +44,3 @@ function PokemonRow({ pokemon, index }: PokemonRowProps) {
     )
 }
 
-export default memo(PokemonRow, (prevProps, nextProps) => {
-    return (
-        prevProps.pokemon === nextProps.pokemon &&
-        prevProps.index === nextProps.index
-    )
-})
