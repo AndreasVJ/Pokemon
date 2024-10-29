@@ -24,7 +24,7 @@ export async function getMoveCardInfo(moves: Move[]) : Promise<MoveCardInfo[]> {
             if (detailedMove === null) return null
 
             const effectEntry = detailedMove.effect_entries.find(
-                (entry: any) => entry.language.name === "en"
+                entry => entry.language.name === "en"
             )
             return {
                 name: move.name,

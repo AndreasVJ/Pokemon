@@ -14,7 +14,7 @@ export default function PokemonCard() {
     // Change the pokemon displayed when activeIndex changes
     useEffect(() => {
         setPokemon(application.pokemons[application.activeIndex])
-    }, [application.activeIndex])
+    }, [application.activeIndex, application.pokemons])
 
     useEffect(() => {
         if (!pokemon) return

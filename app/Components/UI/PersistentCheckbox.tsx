@@ -29,7 +29,7 @@ export default function PersistentCheckbox({ label, storageKey, state, setState,
         else {
             setState(JSON.parse(storedValue))
         }
-    }, [])
+    }, [storageKey, initialState, setState])
 
     // Persist the state to localStorage whenever it changes
     useEffect(() => {

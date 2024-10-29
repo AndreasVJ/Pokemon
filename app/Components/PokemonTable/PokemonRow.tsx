@@ -19,7 +19,7 @@ function PokemonRow({ pokemon, index }: PokemonRowProps) {
                 block: "nearest"
             })
         }
-    }, [application.activeIndex])
+    }, [application.activeIndex, index])
 
     return (
         <tr 
