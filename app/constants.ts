@@ -1,1 +1,1 @@
-export const POKEMON_PAGE_SIZE = 20
+export const POKEMON_PAGE_SIZE = 30

@@ -71,35 +71,38 @@ export default function Home() {
 
                 <main>
                     <PokemonCard />
-                    <div>
-                        <PersistentCheckbox 
-                            label="Picture" 
-                            storageKey="enablePicture" 
-                            state={enablePicture} 
-                            setState={setEnablePicture}
-                            initialState={true}
-                        />
-                        <PersistentCheckbox 
-                            label="Height" 
-                            storageKey="enableHeight" 
-                            state={enableHeight} 
-                            setState={setEnableHeight}
-                            initialState={true}
-                        />
-                        <PersistentCheckbox 
-                            label="Weight" 
-                            storageKey="enableWeight" 
-                            state={enableWeight} 
-                            setState={setEnableWeight}
-                            initialState={true}
-                        />
-                        <PersistentCheckbox 
-                            label="Types" 
-                            storageKey="enableTypes" 
-                            state={enableTypes} 
-                            setState={setEnableTypes}
-                            initialState={true}
-                        />
+                    <div className={styles.tableAndCheckboxesContainer}>
+                        <div className={styles.checkboxRow}>
+                            <PersistentCheckbox 
+                                label="Picture" 
+                                storageKey="enablePicture" 
+                                state={enablePicture} 
+                                setState={setEnablePicture}
+                                initialState={true}
+                            />
+                            <PersistentCheckbox 
+                                label="Height" 
+                                storageKey="enableHeight" 
+                                state={enableHeight} 
+                                setState={setEnableHeight}
+                                initialState={true}
+                            />
+                            <PersistentCheckbox 
+                                label="Weight" 
+                                storageKey="enableWeight" 
+                                state={enableWeight} 
+                                setState={setEnableWeight}
+                                initialState={true}
+                            />
+                            <PersistentCheckbox 
+                                label="Types" 
+                                storageKey="enableTypes" 
+                                state={enableTypes} 
+                                setState={setEnableTypes}
+                                initialState={true}
+                            />
+                        </div>
+
                         <PokemonTable />
                     </div>
                 </main> 

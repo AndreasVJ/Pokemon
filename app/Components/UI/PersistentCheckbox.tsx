@@ -1,4 +1,5 @@
 'use client'
+import styles from "./PersistentCheckbox.module.scss"
 import { useEffect, Dispatch, SetStateAction } from 'react'
 
 interface PersistentCheckboxProps {
@@ -10,7 +11,7 @@ interface PersistentCheckboxProps {
 }
 
 export default function PersistentCheckbox({ label, storageKey, state, setState, initialState }: PersistentCheckboxProps) {
-    function handleChange() {
+    function handleToggle() {
         setState(prev => !prev)
     }
 
@@ -36,13 +37,14 @@ export default function PersistentCheckbox({ label, storageKey, state, setState,
     }, [state, storageKey]) 
 
     return (
-        <label>
+        <div className={styles.checkboxContainer} onClick={handleToggle}>
             <input
                 type="checkbox"
                 checked={state}
-                onChange={handleChange}
+                onChange={event => event.stopPropagation()} // Prevent double toggle
             />
-            {label}
-        </label>
+            <label>{label}</label>
+        </div>
+        
     )
 }

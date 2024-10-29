@@ -46,8 +46,8 @@ export default function PokemonTable() {
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
         const { scrollTop, scrollHeight, clientHeight } = event.currentTarget;
     
-        // Check if the user is within 300px of the bottom
-        if (scrollHeight - scrollTop <= clientHeight + 300 && !loading && hasMore) {
+        // Check if the user is within 500px of the bottom
+        if (scrollHeight - scrollTop <= clientHeight + 500 && !loading && hasMore) {
             setPage(prev => prev + 1);
         }
     }
