@@ -33,6 +33,10 @@
         border: solid 4px silver;
         background-image: url("/images/background.jpg");
         background-size: cover;
+
+        img {
+            height: 20vh;
+        }
     }
 
     .moveRow {
@@ -41,7 +45,7 @@
         .moveMain {
             display: flex;
             justify-content: space-between;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 500;
 
             p {

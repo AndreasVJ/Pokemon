@@ -19,13 +19,13 @@ export default function PokemonCard() {
     useEffect(() => {
         if (!pokemon) return
 
-        // Get the first 3 moves learned at level 0 
+        // Get the first 2 moves learned at level 0 
         const defaultMoves = pokemon.moves.filter(moveEntry =>
             moveEntry.version_group_details.some(
                 detail => detail.level_learned_at === 0
             )
         )
-        .slice(0, 3)
+        .slice(0, 2)
  
         // Extract more detailed information about the moves
         getMoveCardInfo(defaultMoves.map(move => move.move)).then(moveCardInfo => {
@@ -50,7 +50,6 @@ export default function PokemonCard() {
                 <img 
                     src={pokemon.sprites.other["official-artwork"].front_default} 
                     alt="pokemon"
-                    height={200}
                 />
             </div>
             
